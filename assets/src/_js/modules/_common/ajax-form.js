@@ -124,7 +124,6 @@ export function init(
         $sendButton.classList.remove(disabledBtnClass);
 
         const parsedResponse = responseType === 'json' ? await response.json() : await response.text();
-        console.info(parsedResponse);
 
         afterSubmitAjaxForm(parsedResponse);
     }
