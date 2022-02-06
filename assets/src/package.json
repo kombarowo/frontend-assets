@@ -7,7 +7,9 @@
     "license": "ISC",
     "scripts": {
         "postinstall": "link-module-alias",
-        "maker": "node ./maker/index.js"
+        "maker": "node ./maker/index.js",
+        "start": "npx gulp dev",
+        "build": "npx gulp build"
     },
     "_moduleAliases": {
         "@nm": "node_modules",
@@ -21,7 +23,6 @@
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.11",
         "@eslint/eslintrc": "^1.0.5",
-        "autoprefixer": "^10.4.2",
         "babel-loader": "^8.2.3",
         "chalk": "^5.0.0",
         "del": "^6.0.0",
@@ -30,9 +31,11 @@
         "eslint-plugin-import": "^2.25.4",
         "glob": "^7.2.0",
         "gulp": "^4.0.2",
-        "gulp-postcss": "^9.0.1",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-cssnano": "^2.1.3",
+        "gulp-sass": "^5.1.0",
         "link-module-alias": "^1.2.0",
-        "postcss": "^8.4.6",
+        "sass": "^1.49.7",
         "webpack": "^5.68.0",
         "webpack-stream": "^7.0.0"
     }
