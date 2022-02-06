@@ -41,7 +41,7 @@ export default {
             template: path.resolve(__dirname, 'templates', 'm-template.scss'),
             placeholder: '// {placeholder}',
             entryPath: path.resolve('_scss', 'entries'),
-            pattern: '@import "./components/{entry}/{entry}-{value}.scss";\n// {placeholder}',
+            pattern: '@import "../components/{entry}/{entry}-{value}.scss";\n// {placeholder}',
         },
     },
 };

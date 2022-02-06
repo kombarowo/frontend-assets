@@ -68,6 +68,12 @@ function createModules(value, languages) {
         if (languages.includes(lang.slice(0, 1))) {
             try {
                 /* Make directory */
+                const entryFilePath = path.resolve(options.entryPath, `${entryName}.${lang}`);
+
+                if (!fs.existsSync(entryFilePath)) {
+                    throw new Error(`${entryName} is not exists`);
+                }
+
                 const dirPath = _bindValues(options.path, { '{entry}': entryName });
 
                 _makeDir(dirPath);
@@ -84,7 +90,6 @@ function createModules(value, languages) {
                 _writeFile(filePath, fileContent, true);
 
                 /* Insert module to entry file */
-                const entryFilePath = path.resolve(options.entryPath, `${entryName}.${lang}`);
                 _updateFile(entryFilePath, {
                     [options.placeholder]: options.pattern,
                     [options.placeholder2]: options.pattern2,

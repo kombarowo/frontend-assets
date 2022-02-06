@@ -18,11 +18,11 @@ meta_description = {value}
 {% endput %}
 
 {% put styles %}
-<link rel="stylesheet" type="text/css" href="{{ ['assets/dist/scss/entries/{value}.scss']|theme }}"></link>
+<link rel="stylesheet" type="text/css" href="{{ ['assets/dist/css/{value}.css']|theme }}"></link>
 {% endput %}
 
 {% put scripts %}
-<script defer src="{{ ['assets/dist/js/entries/{value}.js']|theme }}"></script>
+<script defer src="{{ ['assets/dist/js/{value}.js']|theme }}"></script>
 {% endput %}
 
 <main class="content content-{value}">
