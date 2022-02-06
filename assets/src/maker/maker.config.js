@@ -26,8 +26,8 @@ export default {
             placeholder: '// {placeholder}',
             placeholder2: '// {placeholder-2}',
             entryPath: path.resolve('_js', 'entries'),
-            pattern: 'import {entry}{Value} from "@jm/{entry}/{entry}-{value}.js";\n// {placeholder}',
-            pattern2: '{entry}{Value}();\n\t// {placeholder-2}',
+            pattern: 'import {Entry}{Value} from "@jm/{entry}/{entry}-{value}.js";\n// {placeholder}',
+            pattern2: '{Entry}{Value}();\n\t// {placeholder-2}',
         },
         htm: {
             path: path.resolve('../', '../', 'partials', '{entry}'),

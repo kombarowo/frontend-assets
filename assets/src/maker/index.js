@@ -94,6 +94,7 @@ function createModules(value, languages) {
                 const fileContent = _bindValues(_readFile(options.template), {
                     '{value}': moduleName,
                     '{Value}': capitalize(moduleName),
+                    '{Entry}': toCamelCase(entryName),
                     '{entry}': entryName,
                 });
 
@@ -107,6 +108,7 @@ function createModules(value, languages) {
                 _updateFile(entryFilePath, {
                     '{value}': moduleName,
                     '{Value}': capitalize(moduleName),
+                    '{Entry}': toCamelCase(entryName),
                     '{entry}': entryName,
                 });
 
@@ -184,4 +186,17 @@ function _bindValues(string, bindMap) {
 /* Capitalize */
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/* To camel case */
+function toCamelCase(string, delimeter = '_') {
+    return string
+        .split(delimeter)
+        .map((word, index) => {
+            if (index > 0) {
+                return word[0].toUpperCase() + word.slice(1);
+            }
+            return word;
+        })
+        .join('');
 }

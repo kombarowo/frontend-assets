@@ -1,2 +1,2 @@
 /* {entry}-{value} module */
-export default function {entry}{Value}() {}
+export default function {Entry}{Value}() {}
