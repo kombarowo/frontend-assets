@@ -25,20 +25,20 @@ const { type, entities, langs } = CONSOLE_ARGUMETNS;
 switch (type) {
     case 'e':
         entities.forEach((value) => {
-            console.log(chalk.yellow(`Creating ${value} ...`));
+            console.info(chalk.yellow(`Creating ${value} ...`));
             createEntries(value);
-            console.log('\n');
+            console.info('\n');
         });
         break;
     case 'm':
         entities.forEach((value) => {
-            console.log(chalk.yellow(`Creating ${value} ...`));
+            console.info(chalk.yellow(`Creating ${value} ...`));
             createModules(value, langs);
-            console.log('\n');
+            console.info('\n');
         });
         break;
     default:
-        console.log(chalk.red('Unknown type parameter'));
+        console.info(chalk.red('Unknown type parameter'));
         break;
 }
 
@@ -56,7 +56,7 @@ function createEntries(value) {
 
             _writeFile(filePath, fileContent);
         } catch (error) {
-            console.log(chalk.red(error));
+            console.info(chalk.red(error));
         }
     });
 }
@@ -100,9 +100,9 @@ function createModules(value, languages) {
                     '{entry}': entryName,
                 });
 
-                console.log(chalk.green(`${entryFilePath} has been updated!`));
+                console.info(chalk.green(`${entryFilePath} has been updated!`));
             } catch (error) {
-                console.log(chalk.red(error));
+                console.info(chalk.red(error));
             }
         }
     });
@@ -119,7 +119,7 @@ function _makeDir(dirpath) {
 
 function _makeDirCallback(err) {
     if (err) {
-        console.log(chalk.red(err));
+        console.info(chalk.red(err));
         throw err;
     }
 }
@@ -130,13 +130,13 @@ function _writeFile(filepath, content, throwing = false) {
         if (throwing) {
             throw new Error(chalk.red(filepath + ' is already exists'));
         } else {
-            console.log(chalk.red(filepath + ' is already exists'));
+            console.info(chalk.red(filepath + ' is already exists'));
         }
         return;
     }
 
     fs.writeFileSync(filepath, content, { encoding: 'utf-8' });
-    console.log(chalk.green(`${filepath} has been created!`));
+    console.info(chalk.green(`${filepath} has been created!`));
 }
 
 /* Update file */
