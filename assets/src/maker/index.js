@@ -43,6 +43,11 @@ switch (type) {
 }
 
 function createEntries(value) {
+    if (!value) {
+        console.info(chalk.red('Empty parameters'));
+        return;
+    }
+
     Object.entries(config.entries).forEach(([lang, options]) => {
         try {
             /* Make directory */
@@ -63,6 +68,11 @@ function createEntries(value) {
 
 function createModules(value, languages) {
     const [entryName, moduleName] = value.split('-');
+
+    if (!entryName || !moduleName) {
+        console.info(chalk.red('Empty parameters'));
+        return;
+    }
 
     Object.entries(config.modules).forEach(([lang, options]) => {
         if (languages.includes(lang.slice(0, 1))) {
