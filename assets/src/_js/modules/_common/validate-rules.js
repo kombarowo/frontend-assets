@@ -5,7 +5,7 @@ const regex = {
 export default {
     required: {
         message: 'Required',
-        method: (el) => {
+        check: (el) => {
             if (el.type === 'checkbox') {
                 return el.checked;
             }
@@ -18,7 +18,7 @@ export default {
     },
     email: {
         message: 'E-mail is wrong',
-        method: (el) => {
+        check: (el) => {
             if (_isRequired(el)) {
                 return regex.email.test(el.value.trim());
             }
@@ -28,12 +28,12 @@ export default {
     },
     phone: {
         message: 'Phone is wrong',
-        method: (el) => {
+        check: (el) => {
             if (_isRequired(el)) {
-                return el.value.match(/[0-9]/g).length === 11;
+                return el.value.match(/[0-9]/g) && el.value.match(/[0-9]/g).length === 11;
             }
 
-            return el.value.match(/[0-9]/g).length === 11 || el.value === '';
+            return (el.value.match(/[0-9]/g) && el.value.match(/[0-9]/g).length === 11) || el.value === '';
         },
     },
 };
