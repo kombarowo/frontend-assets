@@ -1,0 +1,32 @@
+title = "{value}"
+url = "/{value}"
+layout = "default"
+meta_title = {value}
+meta_description = {value}
+==
+
+{% put ogmeta %}
+<meta property="og:title" content="{{ this.page.meta_title }}"/>
+<meta property="og:description" content="{{ this.page.meta_description }}"/>
+<meta property="og:url" content="{{ ''|page }}/"/>
+{# <meta property="og:image" content="{{ ''|media }}"/> #}
+{% endput %}
+
+{% put meta %}
+<meta name="title" content="{{ this.page.meta_title }}">
+<meta name="description" content="{{ this.page.meta_description }}">
+{% endput %}
+
+{% put styles %}
+<link rel="stylesheet" type="text/css" href="{{ ['assets/dist/scss/entries/{value}.scss']|theme }}"></link>
+{% endput %}
+
+{% put scripts %}
+<script defer src="{{ ['assets/dist/js/entries/{value}.js']|theme }}"></script>
+{% endput %}
+
+<main class="content content-{value}">
+    <div class="page-{value}">
+        {# {placeholder} #}
+    </div>
+</main>

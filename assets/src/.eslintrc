@@ -1,0 +1,21 @@
+{
+    "extends": ["airbnb-base/legacy"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020
+    },
+    "rules": {
+        "comma-dangle": "off",
+        "indent": "off",
+        "max-len": "off",
+        "no-param-reassign": "off",
+        "no-underscore-dangle": "off",
+        "no-use-before-define": "off",
+        "no-useless-escape": "off"
+    }
+}
