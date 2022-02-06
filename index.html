@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/dist/css/main.css" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .input--valid {
+                border: 2px solid green;
+            }
+            .input--invalid {
+                border: 2px solid red;
+            }
+            .button--disabled {
+                opacity: 0.2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>hello</h1>
+        </div>
+
+        <div class="js-accordion-block">
+            <div class="js-accordion">
+                <button class="js-accordion-trigger">toggle</button>
+                <div class="js-accordion-body">
+                    <div class="wrapper">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, perspiciatis impedit ipsa
+                        magni necessitatibus voluptates quos incidunt accusantium laudantium non iusto. Eos distinctio
+                        rem reprehenderit alias, doloribus perspiciatis dolor excepturi ducimus asperiores laudantium,
+                        earum ad voluptatem. Expedita nemo laboriosam illum natus quasi corporis unde repudiandae
+                        voluptate. Officiis cumque laboriosam fuga fugiat nobis. Magni deserunt id sit temporibus
+                        quisquam alias in facere ab, excepturi laboriosam, adipisci odio quibusdam. Voluptate
+                        praesentium cum dignissimos eos exercitationem laboriosam molestiae provident fuga. Expedita
+                        reiciendis inventore, dolores quas officiis minima, quisquam porro recusandae dolore ea rem
+                        quasi veritatis odio alias aliquid fugiat! Perspiciatis tempore repudiandae, doloribus ipsam
+                        ratione in aspernatur ipsum facilis repellendus, culpa quia mollitia esse sequi delectus error
+                        similique commodi nulla ex officia, voluptas voluptatem incidunt fugiat enim molestiae. Minus
+                        libero nobis quisquam laboriosam commodi, sint iste et quasi ratione quod velit aliquid earum
+                        quis ducimus neque! Iste ratione dolores, deserunt tempora animi obcaecati quibusdam harum esse
+                        praesentium assumenda saepe et nulla. Officia doloremque enim deserunt accusantium ducimus vitae
+                        quos error aliquid unde. Sed provident accusamus id reprehenderit unde, quaerat corrupti eius
+                        eaque, facere dolorum soluta, eos voluptatem repellat! Enim eligendi cum, assumenda fugit iusto
+                        perferendis voluptatem sapiente ipsum earum, quo numquam repudiandae nemo.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form action="https://jsonplaceholder.typicode.com/todos" class="form">
+            <input type="text" name="email" data-validate="required, email" />
+            <input type="text" name="email" data-validate="email" />
+            <input type="text" name="email" data-validate="required, phone" />
+            <input type="text" name="email" data-validate="phone" />
+            <input type="text" name="email" data-validate="required" />
+
+            <button type="submit" name="send-button">send</button>
+        </form>
+
+        <script src="./assets/dist/js/main.js"></script>
+    </body>
+</html>
