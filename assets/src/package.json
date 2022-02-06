@@ -8,7 +8,7 @@
     "scripts": {
         "postinstall": "link-module-alias",
         "maker": "node ./maker/index.js",
-        "start": "npx gulp dev",
+        "dev": "npx gulp dev",
         "build": "npx gulp build"
     },
     "_moduleAliases": {
