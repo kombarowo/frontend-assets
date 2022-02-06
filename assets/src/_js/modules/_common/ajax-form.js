@@ -1,11 +1,12 @@
 import rules from '@jmc/validate-rules.js';
 
-export default function initAjaxForms(
+export function init(
     selector,
     {
         beforeSubmitAjaxForm = () => {},
         afterSubmitAjaxForm = () => {},
         onError = () => {},
+        onSuccess = () => {},
         validClass = 'input--valid',
         invalidClass = 'input--invalid',
         disabledBtnClass = 'button--disabled',
@@ -62,6 +63,8 @@ export default function initAjaxForms(
             console.error(error);
             onError();
         }
+
+        onSuccess();
 
         _resetForm($allInputs, $sendButton);
     }
