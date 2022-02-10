@@ -3,14 +3,14 @@ import rules from '@jmc/validate-rules.js';
 export function init(
     selector,
     {
-        beforeSubmitAjaxForm = () => {},
         afterSubmitAjaxForm = () => {},
+        beforeSubmitAjaxForm = () => {},
         onError = () => {},
         onSuccess = () => {},
-        validClass = 'input--valid',
-        invalidClass = 'input--invalid',
         disabledBtnClass = 'button--disabled',
+        invalidClass = 'input--invalid',
         responseType = 'json',
+        validClass = 'input--valid',
     } = {}
 ) {
     if (!selector) {

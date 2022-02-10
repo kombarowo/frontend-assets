@@ -1,8 +1,8 @@
 export function init({
-    blockSelector = '.js-accordion-block',
     accordionSelector = '.js-accordion',
-    triggerSelector = '.js-accordion-trigger',
+    blockSelector = '.js-accordion-block',
     bodySelector = '.js-accordion-body',
+    triggerSelector = '.js-accordion-trigger',
     hide = false,
     once = true,
 } = {}) {
